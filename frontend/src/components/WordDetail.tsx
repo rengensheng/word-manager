@@ -1,5 +1,6 @@
 import type { Word } from '../types';
 import { XIcon, StarIcon, TrashIcon, TagIcon, LayersIcon, SparklesIcon, ClockIcon } from './Icons';
+import { highlightWord } from '../utils/highlight.tsx';
 
 interface WordDetailProps {
   word: Word;
@@ -129,7 +130,7 @@ export function WordDetail({ word, onClose, onToggleFavorite, onDelete }: WordDe
               <ul className="space-y-3">
                 {word.examples.map((example, i) => (
                   <li key={i} className="text-gray-600 text-sm pl-4 border-l-2 border-indigo-300 py-1">
-                    {example}
+                    {highlightWord(example, word.word)}
                   </li>
                 ))}
               </ul>

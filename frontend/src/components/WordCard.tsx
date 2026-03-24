@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Word } from '../types';
 import { StarIcon, TrashIcon, TagIcon, LayersIcon, SparklesIcon, EyeIcon } from './Icons';
 import { WordDetail } from './WordDetail';
+import { highlightWord } from '../utils/highlight.tsx';
 
 interface WordCardProps {
   word: Word;
@@ -167,7 +168,7 @@ export function WordCard({ word, onDelete, onToggleFavorite }: WordCardProps) {
                     <ul className="space-y-2">
                       {word.examples.map((example, i) => (
                         <li key={i} className="text-gray-600 text-xs pl-3 border-l-2 border-indigo-200">
-                          {example}
+                          {highlightWord(example, word.word)}
                         </li>
                       ))}
                     </ul>

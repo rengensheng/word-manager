@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { Word } from '../types';
 import { api } from '../services/api';
 import { XIcon, CheckIcon, LoaderIcon, TargetIcon } from './Icons';
+import { highlightWord } from '../utils/highlight.tsx';
 
 interface StudyModeProps {
   onClose: () => void;
@@ -139,7 +140,7 @@ export function StudyMode({ onClose, onComplete }: StudyModeProps) {
                   {currentWord.examples?.length > 0 && (
                     <div>
                       <h3 className="text-sm font-semibold text-gray-800 mb-1">例句</h3>
-                      <p className="text-gray-600 text-xs">{currentWord.examples[0]}</p>
+                      <p className="text-gray-600 text-xs">{highlightWord(currentWord.examples[0], currentWord.word)}</p>
                     </div>
                   )}
                 </div>
