@@ -1,0 +1,13 @@
+name = "word-manager-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "word-manager-db"
+database_id = ""
+
+[vars]
+ENVIRONMENT = "development"
+# AI_API_BASE_URL = "https://api.deepseek.com"
+# AI_MODEL = "deepseek-chat"

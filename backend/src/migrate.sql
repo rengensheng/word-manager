@@ -1,0 +1,11 @@
+-- 为现有表添加新字段
+ALTER TABLE words ADD COLUMN collocations TEXT;
+ALTER TABLE words ADD COLUMN word_forms TEXT;
+ALTER TABLE words ADD COLUMN exam_level TEXT;
+ALTER TABLE words ADD COLUMN difficulty INTEGER DEFAULT 3;
+ALTER TABLE words ADD COLUMN frequency INTEGER DEFAULT 3;
+ALTER TABLE words ADD COLUMN category TEXT;
+ALTER TABLE words ADD COLUMN review_count INTEGER DEFAULT 0;
+ALTER TABLE words ADD COLUMN correct_count INTEGER DEFAULT 0;
+ALTER TABLE words ADD COLUMN last_review_at TEXT;
+ALTER TABLE words ADD COLUMN next_review_at TEXT;

@@ -1,0 +1,24 @@
+{
+  "name": "word-manager-api",
+  "version": "1.0.0",
+  "description": "Word Manager API - Cloudflare Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 create word-manager-db",
+    "db:migrate": "wrangler d1 execute word-manager-db --file=src/schema.sql",
+    "db:migrate:local": "wrangler d1 execute word-manager-db --local --file=src/schema.sql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hono": "^4.12.9"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260317.1",
+    "typescript": "^6.0.2",
+    "wrangler": "^4.76.0"
+  }
+}
